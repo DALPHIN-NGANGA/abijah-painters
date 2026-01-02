@@ -15,70 +15,54 @@
         <nav class="menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <a href="tel:0713752200" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">Get a Quote</a>
+        <a href="https://wa.me/254713752200" class="btn btn-primary">Free Quote</a>
     </div>
 </header>
 
-<section class="container" style="padding-top: 80px;">
-    <p style="color: var(--accent);">Our Work</p>
-    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Project <span class="script">Showcase</span></h1>
-    <p style="color: var(--text-dim); margin-bottom: 3rem;">A visual record of precision and transformation across Kenya.</p>
+<section class="container" style="padding: 80px 0;">
+    <h1 style="font-size: 3.5rem;">Project <span class="script">Showcase</span></h1>
+    <p style="color: var(--text-dim); margin-bottom: 3rem;">Swipe the sliders to see our transformations.</p>
 
     <div class="bento-grid">
         <div class="bento-item large">
-            <img src="images/project1.jpg" alt="Interior Painting">
-            <div class="bento-content">
-                <span style="background: var(--accent); color: #000; padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: bold;">LIVING SPACE</span>
-                <h3 style="margin-top: 10px;">Modern Minimalist Villa</h3>
+            <div class="ba-container">
+                <div class="ba-image" style="background-image: url('images/b1.jpg');"></div>
+                <div class="ba-after" id="after1" style="background-image: url('images/a1.jpg');"></div>
+                <input type="range" min="0" max="100" value="50" class="ba-slider-input" oninput="document.getElementById('after1').style.width = this.value + '%'">
             </div>
         </div>
 
         <div class="bento-item">
-            <img src="images/project2.jpg" alt="Office Painting">
-            <div class="bento-content">
-                <h3>Corporate HQ</h3>
+            <img src="images/p1.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+            <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
+                <h4 style="color: var(--accent);">Nairobi Office</h4>
             </div>
         </div>
 
         <div class="bento-item">
-            <img src="images/project3.jpg" alt="Exterior Painting">
-            <div class="bento-content">
-                <h3>Exterior Shield</h3>
+            <img src="images/p2.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
+            <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
+                <h4 style="color: var(--accent);">Exterior Shield</h4>
             </div>
         </div>
 
         <div class="bento-item wide">
-            <img src="images/project4.jpg" alt="Commercial Painting">
-            <div class="bento-content">
-                <h3>Luxury Showroom Finish</h3>
-            </div>
-        </div>
-
-        <div class="bento-item">
-            <img src="images/project5.jpg" alt="Detail Work">
-            <div class="bento-content">
-                <h3>Detailing</h3>
-            </div>
-        </div>
-        
-        <div class="bento-item">
-            <img src="images/project6.jpg" alt="Ceiling Work">
-            <div class="bento-content">
-                <h3>Ceiling Mastery</h3>
+            <div class="ba-container">
+                <div class="ba-image" style="background-image: url('images/b2.jpg');"></div>
+                <div class="ba-after" id="after2" style="background-image: url('images/a2.jpg');"></div>
+                <input type="range" min="0" max="100" value="50" class="ba-slider-input" oninput="document.getElementById('after2').style.width = this.value + '%'">
             </div>
         </div>
     </div>
 </section>
 
-<footer>
-    <div class="container">
-        <p>Ready to transform your space? <a href="contact.html" style="color: var(--accent); text-decoration: none;">Get in touch.</a></p>
-    </div>
+<footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--border);">
+    <p style="color: var(--text-dim);">Ready for a transformation?</p>
+    <a href="https://wa.me/254713752200" class="btn btn-primary" style="margin-top: 20px;">Book Now</a>
 </footer>
 
 </body>
