@@ -1,92 +1,212 @@
-/* --- THE ABIJAH BRAND SYSTEM --- */
-:root {
-    --primary: #4ec028; /* Logo Green */
-    --phone-green: #388E3C; /* Requested Deep Green */
-    --bg-black: #050505;
-    --text-main: #ffffff;
-    --text-dim: #a1a1a1;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-    background-color: var(--bg-black); 
-    color: var(--text-main); 
-    font-family: 'Inter', sans-serif; 
-    line-height: 1.6;
+body {
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background: #fff;
 }
 
-.container { width: 90%; max-width: 1200px; margin: 0 auto; }
-
-/* --- BRAND TYPOGRAPHY --- */
-
-/* 1. The Tagline: Green, Italics, Kaushan Font */
-.signature-tagline {
-    font-family: 'Kaushan Script', cursive !important;
-    color: var(--primary) !important;
-    font-style: italic !important;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    display: block;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-/* 2. The Phone Numbers: Kaushan Font, Deep Green */
-.custom-phone, .action-item.call {
-    font-family: 'Kaushan Script', cursive !important;
-    color: var(--phone-green) !important;
-    font-weight: normal;
-    text-decoration: none;
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-/* --- NAVIGATION --- */
-.navbar { 
-    height: 80px; 
-    display: flex; 
-    align-items: center; 
-    background: rgba(10,10,10,0.95); 
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    z-index: 1000; 
-    border-bottom: 1px solid #1a1a1a;
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
 }
-.nav-flex { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: 'Kaushan Script', cursive; font-size: 1.8rem; color: #fff; text-decoration: none; }
-.logo span { color: var(--primary); }
-.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
-.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
 
-/* --- HERO SECTION --- */
-.hero { 
-    height: 100vh; 
-    display: flex; 
-    align-items: center; 
-    text-align: center; 
-    padding-top: 80px; 
-    position: relative; 
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
 }
-.hero-glow { 
-    position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); 
-    width: 400px; height: 400px; background: var(--primary); 
-    filter: blur(150px); opacity: 0.15; z-index: -1; 
+
+.logo {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 26px;
+  color: #fff;
 }
-.hero-title { font-size: clamp(3rem, 10vw, 5rem); font-weight: 900; line-height: 1.1; margin: 15px 0; }
-.green-glow { color: #fff; text-shadow: 0 0 20px rgba(78, 192, 40, 0.5); }
-.hero-sub { color: var(--text-dim); max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; }
 
-/* --- BUTTONS --- */
-.btn-main { background: #fff; color: #000; padding: 16px 35px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; }
-.btn-ghost { border: 1px solid #333; padding: 16px 35px; border-radius: 8px; margin-left: 10px; display: inline-block; }
-.btn-nav { background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; }
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
 
-/* --- MOBILE ACTION BAR --- */
-.action-bar { position: fixed; bottom: 0; width: 100%; display: flex; height: 70px; z-index: 2000; }
-.action-item { flex: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 800; }
-.action-item.wa { background: var(--primary); color: #fff; }
-.action-item.call { background: #fff; border-top: 1px solid #ddd; }
+.menu a {
+  color: #fff;
+  font-weight: 500;
+}
 
-@media (max-width: 768px) {
-    .nav-links, .btn-nav { display: none; }
-    .hero-btns { display: flex; flex-direction: column; gap: 10px; }
-    .btn-ghost { margin-left: 0; }
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #fff;
+  display: none;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.dropdown-menu a {
+  padding: 12px;
+  color: #111;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+.phone {
+  font-family: 'Kaushan Script', cursive;
+  color: #388E3C;
+  font-size: 20px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  background: linear-gradient(120deg, #000, #0b2e1c);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 42px;
+  max-width: 700px;
+}
+
+.slogan {
+  font-family: 'Kaushan Script', cursive;
+  font-style: italic;
+  color: #388E3C;
+  font-size: 26px;
+  margin: 15px 0;
+}
+
+.hero-sub {
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 15px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 14px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.primary {
+  background: #25D366;
+  color: #000;
+}
+
+.secondary {
+  border: 2px solid #25D366;
+  color: #25D366;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 80px 0;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-grid,
+.trust-grid,
+.gallery-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.service-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.service-card {
+  border: 1px solid #ddd;
+  padding: 25px;
+  border-radius: 8px;
+}
+
+.trust-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  text-align: center;
+  font-weight: 600;
+}
+
+.gallery-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.placeholder {
+  background: #eee;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.footer-logo {
+  font-family: 'Kaushan Script', cursive;
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 14px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  z-index: 999;
 }
