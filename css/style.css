@@ -1,212 +1,138 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+    --bg-dark: #0f1113;
+    --card-bg: #1a1d20;
+    --primary-accent: #32ff7e; /* Electric Green */
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border-subtle: rgba(255, 255, 255, 0.05);
+    --glass: rgba(255, 255, 255, 0.03);
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', sans-serif;
-  color: #111;
-  background: #fff;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ===== HEADER ===== */
+/* Navigation - Modern Floating Glass */
 .header {
-  position: fixed;
-  width: 100%;
-  background: rgba(0,0,0,0.85);
-  z-index: 1000;
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(15, 17, 19, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 0;
-}
+.nav { display: flex; justify-content: space-between; align-items: center; }
 
 .logo {
-  font-family: 'Kaushan Script', cursive;
-  font-size: 26px;
-  color: #fff;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-accent);
 }
 
-.menu ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
+.menu ul { display: flex; list-style: none; gap: 2.5rem; }
+.menu a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
+.menu a:hover { color: var(--primary-accent); }
 
-.menu a {
-  color: #fff;
-  font-weight: 500;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background: #fff;
-  display: none;
-  flex-direction: column;
-  min-width: 200px;
-}
-
-.dropdown-menu a {
-  padding: 12px;
-  color: #111;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: flex;
-}
-
-.phone {
-  font-family: 'Kaushan Script', cursive;
-  color: #388E3C;
-  font-size: 20px;
-}
-
-/* ===== HERO ===== */
+/* Hero Section - Technical & Bold */
 .hero {
-  height: 100vh;
-  background: linear-gradient(120deg, #000, #0b2e1c);
-  position: relative;
-  display: flex;
-  align-items: center;
+    padding: 160px 0 100px;
+    background: radial-gradient(circle at top right, rgba(50, 255, 126, 0.05), transparent);
+    text-align: center;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-}
-
-.hero-content {
-  position: relative;
-  color: #fff;
-  z-index: 1;
-}
-
-.hero h1 {
-  font-size: 42px;
-  max-width: 700px;
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -2px;
 }
 
 .slogan {
-  font-family: 'Kaushan Script', cursive;
-  font-style: italic;
-  color: #388E3C;
-  font-size: 26px;
-  margin: 15px 0;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.5rem;
+    color: var(--primary-accent);
+    margin-bottom: 1rem;
 }
 
 .hero-sub {
-  max-width: 600px;
-  margin-bottom: 30px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.1rem;
 }
 
-.hero-cta {
-  display: flex;
-  gap: 15px;
-}
-
-/* ===== BUTTONS ===== */
-.btn {
-  padding: 14px 22px;
-  border-radius: 6px;
-  font-weight: 600;
-}
-
-.primary {
-  background: #25D366;
-  color: #000;
-}
-
-.secondary {
-  border: 2px solid #25D366;
-  color: #25D366;
-}
-
-/* ===== SECTIONS ===== */
-section {
-  padding: 80px 0;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.service-grid,
-.trust-grid,
-.gallery-grid {
-  display: grid;
-  gap: 25px;
-}
-
+/* Bento Grid Services */
 .service-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 4rem 0;
 }
 
 .service-card {
-  border: 1px solid #ddd;
-  padding: 25px;
-  border-radius: 8px;
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--border-subtle);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.service-card:hover {
+    border-color: var(--primary-accent);
+    transform: translateY(-10px);
+}
+
+.service-card h3 { color: var(--primary-accent); margin-bottom: 1rem; }
+
+/* Buttons */
+.btn {
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn.primary {
+    background: var(--primary-accent);
+    color: #000;
+}
+
+.btn.primary:hover {
+    box-shadow: 0 0 25px rgba(50, 255, 126, 0.4);
+    transform: scale(1.05);
+}
+
+.btn.secondary {
+    border: 1px solid var(--border-subtle);
+    color: var(--text-main);
+    margin-left: 1rem;
+}
+
+/* Trust Tags */
 .trust-grid {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  text-align: center;
-  font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 }
 
-.gallery-grid {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.placeholder {
-  background: #eee;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  background: #111;
-  color: #fff;
-  padding: 40px 0;
-}
-
-.footer-logo {
-  font-family: 'Kaushan Script', cursive;
-}
-
-/* ===== WHATSAPP FLOAT ===== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 14px 18px;
-  border-radius: 50px;
-  font-weight: bold;
-  z-index: 999;
+.trust-tag {
+    background: var(--glass);
+    padding: 0.8rem 1.5rem;
+    border-radius: 100px;
+    border: 1px solid var(--border-subtle);
+    font-size: 0.85rem;
 }
