@@ -1,138 +1,101 @@
 :root {
-    --bg-dark: #0f1113;
-    --card-bg: #1a1d20;
-    --primary-accent: #32ff7e; /* Electric Green */
-    --text-main: #e0e0e0;
-    --text-muted: #a0a0a0;
-    --border-subtle: rgba(255, 255, 255, 0.05);
+    --bg: #05070a;
+    --card: #0d1117;
+    --accent: #39ff14; /* Cyber Neon Green */
+    --accent-glow: rgba(57, 255, 20, 0.2);
+    --text-dim: #8b949e;
     --glass: rgba(255, 255, 255, 0.03);
+    --font-main: 'Inter', sans-serif;
+    --font-script: 'Kaushan Script', cursive;
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
+    background-color: var(--bg);
+    color: white;
+    font-family: var(--font-main);
+    margin: 0;
+    /* Subtle scanline effect from the HackerRank UI */
+    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .02) 25%, rgba(255, 255, 255, .02) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .02) 75%, rgba(255, 255, 255, .02) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-/* Navigation - Modern Floating Glass */
-.header {
-    padding: 1.5rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(15, 17, 19, 0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-subtle);
-}
-
-.nav { display: flex; justify-content: space-between; align-items: center; }
-
-.logo {
-    font-family: 'Kaushan Script', cursive;
-    font-size: 1.8rem;
-    color: var(--primary-accent);
-}
-
-.menu ul { display: flex; list-style: none; gap: 2.5rem; }
-.menu a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.9rem; transition: 0.3s; }
-.menu a:hover { color: var(--primary-accent); }
-
-/* Hero Section - Technical & Bold */
+/* --- THE HERO (HackerRank Style) --- */
 .hero {
-    padding: 160px 0 100px;
-    background: radial-gradient(circle at top right, rgba(50, 255, 126, 0.05), transparent);
-    text-align: center;
-}
-
-h1 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -2px;
-}
-
-.slogan {
-    font-family: 'Kaushan Script', cursive;
-    font-size: 1.5rem;
-    color: var(--primary-accent);
-    margin-bottom: 1rem;
-}
-
-.hero-sub {
-    color: var(--text-muted);
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    font-size: 1.1rem;
-}
-
-/* Bento Grid Services */
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 4rem 0;
-}
-
-.service-card {
-    background: var(--card-bg);
-    padding: 2.5rem;
-    border-radius: 24px;
-    border: 1px solid var(--border-subtle);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.service-card:hover {
-    border-color: var(--primary-accent);
-    transform: translateY(-10px);
-}
-
-.service-card h3 { color: var(--primary-accent); margin-bottom: 1rem; }
-
-/* Buttons */
-.btn {
-    padding: 1rem 2.5rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-.btn.primary {
-    background: var(--primary-accent);
-    color: #000;
-}
-
-.btn.primary:hover {
-    box-shadow: 0 0 25px rgba(50, 255, 126, 0.4);
-    transform: scale(1.05);
-}
-
-.btn.secondary {
-    border: 1px solid var(--border-subtle);
-    color: var(--text-main);
-    margin-left: 1rem;
-}
-
-/* Trust Tags */
-.trust-grid {
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    align-items: center;
     justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.trust-tag {
-    background: var(--glass);
-    padding: 0.8rem 1.5rem;
+/* Atmospheric Glow behind text */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: var(--accent);
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 0.9;
+    z-index: 1;
+}
+
+.hero-h1 span.script {
+    font-family: var(--font-script);
+    color: var(--accent);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* --- BENTO BOX GALLERY/SERVICES --- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 300px;
+    gap: 20px;
+    padding: 40px;
+}
+
+.bento-item {
+    background: var(--card);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-item:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: translateY(-5px);
+}
+
+.large { grid-column: span 2; grid-row: span 2; }
+.wide { grid-column: span 2; }
+
+/* Sticky Mobile CTA - Elite Execution */
+.mobile-nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background: rgba(13, 17, 23, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass);
     border-radius: 100px;
-    border: 1px solid var(--border-subtle);
-    font-size: 0.85rem;
+    padding: 8px;
+    z-index: 1000;
 }
