@@ -4,61 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Abijah Painters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Kaushan+Script&display=swap" rel="stylesheet">
 </head>
-<body class="dark-theme">
+<body>
 
-    <nav class="navbar">
-        <div class="container nav-flex">
-            <a href="index.html" class="logo">Abijah<span>Painters</span></a>
-            <ul class="nav-links">
+<header class="header">
+    <div class="container nav">
+        <a href="index.html" class="logo">AbijahPainters</a>
+        <nav class="menu">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html" class="active">Portfolio</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </div>
-    </nav>
-
-    <header class="page-header" style="padding-top: 120px; text-align: center;">
-        <div class="container">
-            <h1 class="hero-title">Our <span class="green-glow">Work</span></h1>
-            <p class="hero-sub">From luxury villas to commercial offices—see the Abijah standard.</p>
-        </div>
-    </header>
-
-    <section class="section">
-        <div class="container">
-            <div class="filter-group" style="margin-bottom: 30px; display: flex; gap: 10px; justify-content: center;">
-                <button class="btn-tag active">All Projects</button>
-                <button class="btn-tag">Interior</button>
-                <button class="btn-tag">Exterior</button>
-            </div>
-
-            <div class="portfolio-grid">
-                
-                <div class="portfolio-item">
-                    <img src="assets/images/project1-after.jpg" alt="Interior Painting Nairobi">
-                    <div class="item-overlay">
-                        <p>Living Room Refresh • Kilimani</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <img src="assets/images/project2-after.jpg" alt="Commercial Painting">
-                    <div class="item-overlay">
-                        <p>Office Branding • Westlands</p>
-                    </div>
-                </div>
-
-                </div>
-        </div>
-    </section>
-
-    <div class="action-bar">
-        <a href="https://wa.me/254712345678" class="action-item wa">WhatsApp My Project</a>
+        </nav>
+        <a href="tel:0713752200" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">Get a Quote</a>
     </div>
+</header>
+
+<section class="container" style="padding-top: 80px;">
+    <p style="color: var(--accent);">Our Work</p>
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">Project <span class="script">Showcase</span></h1>
+    <p style="color: var(--text-dim); margin-bottom: 3rem;">A visual record of precision and transformation across Kenya.</p>
+
+    <div class="bento-grid">
+        <div class="bento-item large">
+            <img src="images/project1.jpg" alt="Interior Painting">
+            <div class="bento-content">
+                <span style="background: var(--accent); color: #000; padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: bold;">LIVING SPACE</span>
+                <h3 style="margin-top: 10px;">Modern Minimalist Villa</h3>
+            </div>
+        </div>
+
+        <div class="bento-item">
+            <img src="images/project2.jpg" alt="Office Painting">
+            <div class="bento-content">
+                <h3>Corporate HQ</h3>
+            </div>
+        </div>
+
+        <div class="bento-item">
+            <img src="images/project3.jpg" alt="Exterior Painting">
+            <div class="bento-content">
+                <h3>Exterior Shield</h3>
+            </div>
+        </div>
+
+        <div class="bento-item wide">
+            <img src="images/project4.jpg" alt="Commercial Painting">
+            <div class="bento-content">
+                <h3>Luxury Showroom Finish</h3>
+            </div>
+        </div>
+
+        <div class="bento-item">
+            <img src="images/project5.jpg" alt="Detail Work">
+            <div class="bento-content">
+                <h3>Detailing</h3>
+            </div>
+        </div>
+        
+        <div class="bento-item">
+            <img src="images/project6.jpg" alt="Ceiling Work">
+            <div class="bento-content">
+                <h3>Ceiling Mastery</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>Ready to transform your space? <a href="contact.html" style="color: var(--accent); text-decoration: none;">Get in touch.</a></p>
+    </div>
+</footer>
 
 </body>
 </html>
