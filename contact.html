@@ -3,69 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Abijah Painters</title>
+    <title>Contact | Abijah Painters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Abijah<span class="highlight">Painters</span></a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html">Our Work</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-            <div class="burger" id="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
-    </nav>
-
-    <header class="page-header">
-        <div class="container">
-            <h1>Get a Quote</h1>
-            <p>Fastest way? WhatsApp us below.</p>
+    <header class="header">
+        <div class="container nav">
+            <a href="index.html" class="logo">AbijahPainters</a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section class="section">
-        <div class="container">
-            <div class="contact-methods">
-                <div class="contact-item">
-                    <strong>WhatsApp / Call:</strong> <br>
-                    <a href="tel:+254700000000" style="color:var(--primary); font-size: 1.5rem; font-weight:bold;">0700 000 000</a>
-                </div>
-                <div class="contact-item">
-                    <strong>Email:</strong> <br> info@abijahpainters.co.ke
-                </div>
-                <div class="contact-item">
-                    <strong>Service Areas:</strong> <br> Nairobi, Kiambu, Kajiado, Machakos
-                </div>
+    <section class="container" style="padding: 100px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start;">
+        <div>
+            <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Start your <br><span class="script">Transformation</span></h1>
+            <p style="color: var(--text-dim); margin-bottom: 2rem;">Ready for a precision-engineered finish? Reach out for a site visit and a transparent quote.</p>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <p style="font-size: 0.8rem; color: var(--accent); text-transform: uppercase;">Direct Line</p>
+                <p style="font-size: 1.2rem;">0713 752 200</p>
             </div>
-
-            <form class="contact-form" id="contactForm">
-                <h3 class="text-center" style="margin-bottom:20px;">Send a Message</h3>
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" required placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" required placeholder="07...">
-                </div>
-                <div class="form-group">
-                    <label>Project Details</label>
-                    <textarea rows="4" placeholder="I need my living room painted..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width:100%;">Request Call Back</button>
-            </form>
+            <div>
+                <p style="font-size: 0.8rem; color: var(--accent); text-transform: uppercase;">WhatsApp</p>
+                <p style="font-size: 1.2rem;">+254 713 752 200</p>
+            </div>
         </div>
+
+        <form class="contact-form">
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" placeholder="John Doe">
+            </div>
+            <div class="input-group">
+                <label>Project Type</label>
+                <input type="text" placeholder="Interior, Exterior, Commercial...">
+            </div>
+            <div class="input-group">
+                <label>Message</label>
+                <textarea rows="5" placeholder="Tell us about your space..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+        </form>
     </section>
-    
-    <script src="js/main.js"></script>
 </body>
 </html>
