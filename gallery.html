@@ -4,65 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Abijah Painters</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <header class="header">
     <div class="container nav">
         <a href="index.html" class="logo">AbijahPainters</a>
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="https://wa.me/254713752200" class="btn btn-primary">Free Quote</a>
+        <a href="index.html" style="color:var(--text-dim); text-decoration:none; font-size:0.8rem;">← Back</a>
     </div>
 </header>
 
-<section class="container" style="padding: 80px 0;">
-    <h1 style="font-size: 3.5rem;">Project <span class="script">Showcase</span></h1>
-    <p style="color: var(--text-dim); margin-bottom: 3rem;">Swipe the sliders to see our transformations.</p>
+<section class="container" style="padding-top:120px;">
+    <h1 style="font-size:2.5rem;">Project <span class="script">Evidence</span></h1>
+    <p style="color:var(--text-dim); margin-bottom:2rem;">Swipe the sliders to see the precision.</p>
 
     <div class="bento-grid">
-        <div class="bento-item large">
+        <div class="bento-item large" style="padding:0;">
             <div class="ba-container">
-                <div class="ba-image" style="background-image: url('images/b1.jpg');"></div>
-                <div class="ba-after" id="after1" style="background-image: url('images/a1.jpg');"></div>
-                <input type="range" min="0" max="100" value="50" class="ba-slider-input" oninput="document.getElementById('after1').style.width = this.value + '%'">
+                <div class="ba-image" style="background-image: url('assets/images/before-1.jpg');"></div>
+                <div class="ba-after" id="after1" style="background-image: url('assets/images/after-1.jpg');"></div>
+                <input type="range" min="0" max="100" value="50" class="ba-input" oninput="document.getElementById('after1').style.width = this.value + '%'">
+            </div>
+            <div style="padding:20px;">
+                <h4 style="color:var(--accent);">Modern Villa Transformation</h4>
             </div>
         </div>
 
         <div class="bento-item">
-            <img src="images/p1.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
-            <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
-                <h4 style="color: var(--accent);">Nairobi Office</h4>
-            </div>
-        </div>
-
-        <div class="bento-item">
-            <img src="images/p2.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.6;">
-            <div style="position: absolute; bottom: 20px; left: 20px; z-index: 5;">
-                <h4 style="color: var(--accent);">Exterior Shield</h4>
-            </div>
-        </div>
-
-        <div class="bento-item wide">
-            <div class="ba-container">
-                <div class="ba-image" style="background-image: url('images/b2.jpg');"></div>
-                <div class="ba-after" id="after2" style="background-image: url('images/a2.jpg');"></div>
-                <input type="range" min="0" max="100" value="50" class="ba-slider-input" oninput="document.getElementById('after2').style.width = this.value + '%'">
-            </div>
+            <img src="assets/images/p1.jpg" style="width:100%; height:120px; object-fit:cover; border-radius:10px; margin-bottom:10px;">
+            <h4>Living Room</h4>
+            <p style="font-size:0.7rem; color:var(--text-dim);">Satin finish ivory.</p>
         </div>
     </div>
 </section>
 
-<footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--border);">
-    <p style="color: var(--text-dim);">Ready for a transformation?</p>
-    <a href="https://wa.me/254713752200" class="btn btn-primary" style="margin-top: 20px;">Book Now</a>
+<footer style="padding: 40px 0; text-align: center;">
+    <a href="contact.html" class="btn btn-primary">Start Your Project</a>
 </footer>
 
 </body>
