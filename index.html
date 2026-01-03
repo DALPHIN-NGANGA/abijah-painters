@@ -3,56 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abijah Painters | Elite Painting Kenya</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Abijah Painters | Elite Finishes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="header">
     <div class="container nav">
         <a href="index.html" class="logo">AbijahPainters</a>
-        <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <a href="tel:0713752200" style="color:var(--accent); text-decoration:none; font-weight:bold; font-size:0.8rem;">0713 752200</a>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:0713752200" class="btn btn-primary">0713 752 200</a>
     </div>
 </header>
 
 <section class="hero">
-    <img src="assets/images/hero-house.png" class="hero-bg-image" alt="Wireframe House">
-    <div class="container hero-content">
-        <p style="color:var(--accent); letter-spacing:3px; font-weight:700; font-size:0.7rem; margin-bottom:1rem;">ELITE PAINTING SOLUTIONS</p>
-        <h1 class="hero-h1">Painting is <br> <span class="script">vibrant</span> + Abijah</h1>
-        <p style="color:var(--text-dim); margin: 1.5rem 0 2.5rem;">Transforming spaces with precision and durable finishes.</p>
+    <div class="container">
+        <p style="color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Professional Painting Kenya</p>
+        <h1 class="hero-h1">The future of spaces<br>is <span class="script">vibrant</span> + Abijah</h1>
+        <p style="color: var(--text-dim); margin: 2rem auto; max-width: 600px;">Precision-led painting services for those who demand elite finishes and durable results.</p>
         <div class="hero-cta">
-            <a href="https://wa.me/254713752200?text=I'm%20interested%20in%20a%20quote" class="btn btn-primary">WhatsApp Now</a>
-            <a href="gallery.html" class="btn btn-secondary">View Work</a>
+            <a href="https://wa.me/254713752200" class="btn btn-primary">WhatsApp Us</a>
+            <a href="gallery.html" class="btn btn-secondary" style="margin-left: 10px;">View Our Work</a>
         </div>
     </div>
 </section>
 
 <section class="container">
     <div class="bento-grid">
-        <div class="bento-item large" style="display:flex; flex-direction:column; justify-content:center;">
-            <h2 style="color:var(--accent); margin-bottom:10px;">Our Edge</h2>
-            <p style="color:var(--text-dim);">We combine architectural-grade materials with surgical precision to ensure your home or office stands out.</p>
+        <div class="bento-item large">
+            <div class="ba-container">
+                <div class="ba-image" style="background-image: url('images/before.jpg');"></div>
+                <div class="ba-after" id="hero-after" style="background-image: url('images/after.jpg');"></div>
+                <input type="range" min="0" max="100" value="50" class="ba-slider-input" oninput="document.getElementById('hero-after').style.width = this.value + '%'">
+            </div>
         </div>
-        <div class="bento-item">
-            <h3>Interior</h3>
-            <p style="font-size:0.8rem; color:var(--text-dim);">Premium washable finishes for luxury living.</p>
+        <div class="bento-item wide" style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+            <h3 style="color: var(--accent); margin-bottom: 1rem;">Interior Precision</h3>
+            <p>From luxury villas to modern apartments, we deliver flawless walls that last.</p>
         </div>
-        <div class="bento-item">
+        <div class="bento-item" style="padding: 30px;">
+            <h3>Commercial</h3>
+            <p>Scalable solutions for offices and retail.</p>
+        </div>
+        <div class="bento-item" style="padding: 30px;">
             <h3>Exterior</h3>
-            <p style="font-size:0.8rem; color:var(--text-dim);">Weather-shield tech for Kenya's climate.</p>
+            <p>Weather-shield protection for Kenya's climate.</p>
         </div>
     </div>
 </section>
 
-<footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--border);">
-    <p style="color: var(--text-dim); font-size: 0.7rem;">&copy; 2026 Abijah Painters. Engineered Excellence.</p>
+<footer style="padding: 60px 0; text-align: center; border-top: 1px solid var(--border);">
+    <p style="color: var(--text-dim);">© 2026 Abijah Painters. Transforming Spaces One Coat at a Time.</p>
 </footer>
 
 </body>
