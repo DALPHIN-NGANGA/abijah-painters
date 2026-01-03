@@ -36,39 +36,53 @@ nav ul {
 
 nav li {
   margin: 0 15px;
+  position: relative;
 }
 
 nav a {
   color: #ccc;
   text-decoration: none;
   transition: all 0.3s ease;
-  position: relative;
   padding: 10px;
 }
 
 nav a:hover {
   color: #00ff00;
-  transform: scale(1.1); /* Expand on hover */
-  background-color: #333;
-  border-radius: 5px;
 }
 
-nav a:hover::after {
-  content: attr(data-desc); /* Tooltip description */
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #00ff00;
-  color: #111;
-  padding: 5px 10px;
-  border-radius: 5px;
+.dropdown > a::after {
+  content: ' ↓';
   font-size: 0.8rem;
-  white-space: nowrap;
-  animation: fadeIn 0.3s;
 }
 
-.phone-btn {
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  animation: expand 0.3s ease;
+}
+
+.dropdown-content a {
+  color: #ccc;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.quote-btn {
   background-color: #00ff00;
   color: #111;
   padding: 10px 20px;
@@ -76,9 +90,10 @@ nav a:hover::after {
   text-decoration: none;
   font-weight: bold;
   transition: transform 0.3s;
+  white-space: nowrap;
 }
 
-.phone-btn:hover {
+.quote-btn:hover {
   transform: scale(1.05);
 }
 
@@ -115,6 +130,10 @@ nav a:hover::after {
   margin: 10px 0;
 }
 
+.hero .glow {
+  text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
 .hero .vibrant {
   font-family: 'Dancing Script', cursive;
   color: #00ff00;
@@ -138,19 +157,45 @@ nav a:hover::after {
   transition: all 0.3s;
 }
 
-.green-btn {
-  background: #00ff00;
-  color: #111;
+.white-btn {
+  background: #fff;
+  color: #000;
 }
 
 .black-btn {
   background: #000;
   color: #fff;
-  border: 1px solid #fff;
 }
 
 .cta-btn:hover {
   animation: pulse 1s infinite;
+}
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 1000;
+}
+
+.bottom-btn {
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  flex: 1;
+}
+
+.green-bottom {
+  background: #00ff00;
+  color: #fff;
+}
+
+.white-bottom {
+  background: #fff;
+  color: #000;
 }
 
 .services-section {
@@ -164,18 +209,17 @@ nav a:hover::after {
   margin: 20px;
   padding: 20px;
   background: #222;
-  border-radius: 50%; /* Creative: circular for vibrancy, but hex if you add SVG */
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   transition: transform 0.3s;
-  position: relative;
 }
 
 .service-card:hover {
-  transform: translateY(-10px) rotate(5deg); /* Vibrant hover effect */
+  transform: scale(1.1) rotate(3deg);
   box-shadow: 0 0 20px #00ff00;
 }
 
 .service-icon {
-  font-size: 3rem; /* Placeholder; replace with img */
+  font-size: 3rem;
   color: #00ff00;
 }
 
@@ -253,12 +297,13 @@ footer {
   padding: 20px;
   text-align: center;
   margin-top: 50px;
+  margin-bottom: 60px; /* Space for bottom bar */
 }
 
 .qr-code {
   width: 100px;
   height: 100px;
-  background: #fff; /* Placeholder; replace with actual QR image */
+  background: #fff; /* Placeholder */
 }
 
 @keyframes fadeIn {
@@ -270,6 +315,11 @@ footer {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
+}
+
+@keyframes expand {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* Responsiveness */
@@ -293,11 +343,16 @@ footer {
     text-align: center;
   }
   
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+  
   .hamburger {
     display: flex;
   }
   
-  .phone-btn {
+  .quote-btn {
     margin-top: 10px;
     width: 100%;
     text-align: center;
@@ -310,9 +365,13 @@ footer {
   .service-card {
     width: 100%;
   }
+  
+  .bottom-bar {
+    display: flex; /* Always show on mobile */
+  }
 }
 
-@media (min-width: 1200px) { /* For TVs/large screens */
+@media (min-width: 1200px) {
   .hero h1 {
     font-size: 5rem;
   }
