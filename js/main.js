@@ -1,29 +1,39 @@
+// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Navigation Background Change on Scroll
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(0, 0, 0, 0.98)';
-        } else {
-            navbar.style.background = 'rgba(10, 10, 10, 0.85)';
-        }
+  const hamburger = document.querySelector('.hamburger');
+  const navUl = document.querySelector('nav ul');
+
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      navUl.classList.toggle('active');
+      hamburger.classList.toggle('open');
+    });
+  }
+
+  // Lightbox for gallery
+  const galleryItems = document.querySelectorAll('.gallery-item img');
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+
+  if (lightbox) {
+    galleryItems.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
     });
 
-    // 2. Lightbox Functionality
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close-lightbox');
-    const galleryImages = document.querySelectorAll('.portfolio-item img');
-
-    galleryImages.forEach(img => {
-        img.addEventListener('click', () => {
-            lightbox.style.display = 'block';
-            lightboxImg.src = img.src;
-        });
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
     });
+  }
 
-    closeBtn.onclick = () => lightbox.style.display = 'none';
-    lightbox.onclick = (e) => {
-        if (e.target !== lightboxImg) lightbox.style.display = 'none';
-    };
+  // Contact form submit (placeholder; add real backend if needed)
+  const form = document.querySelector('form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Message sent!'); // Creative feedback
+    });
+  }
 });
