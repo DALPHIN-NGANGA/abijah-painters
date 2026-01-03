@@ -1,7 +1,7 @@
-// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.hamburger');
   const navUl = document.querySelector('nav ul');
+  const dropdowns = document.querySelectorAll('.dropdown');
 
   if (hamburger) {
     hamburger.addEventListener('click', () => {
@@ -10,7 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Lightbox for gallery
+  // Mobile dropdown click
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', (e) => {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        dropdown.querySelector('.dropdown-content').style.display = 
+          (dropdown.querySelector('.dropdown-content').style.display === 'block') ? 'none' : 'block';
+      }
+    });
+  });
+
+  // Gallery lightbox (same)
   const galleryItems = document.querySelectorAll('.gallery-item img');
   const lightbox = document.querySelector('.lightbox');
   const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
@@ -28,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact form submit (placeholder; add real backend if needed)
+  // Contact form (same)
   const form = document.querySelector('form');
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      alert('Message sent!'); // Creative feedback
+      alert('Message sent!');
     });
   }
 });
