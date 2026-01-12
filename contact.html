@@ -4,54 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Abijah Painters</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container nav">
-            <a href="index.html" class="logo">AbijahPainters</a>
-            <nav class="menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section class="container" style="padding: 100px 0; display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: start;">
-        <div>
-            <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Start your <br><span class="script">Transformation</span></h1>
-            <p style="color: var(--text-dim); margin-bottom: 2rem;">Ready for a precision-engineered finish? Reach out for a site visit and a transparent quote.</p>
-            
-            <div style="margin-bottom: 1.5rem;">
-                <p style="font-size: 0.8rem; color: var(--accent); text-transform: uppercase;">Direct Line</p>
-                <p style="font-size: 1.2rem;">0713 752 200</p>
-            </div>
-            <div>
-                <p style="font-size: 0.8rem; color: var(--accent); text-transform: uppercase;">WhatsApp</p>
-                <p style="font-size: 1.2rem;">+254 713 752 200</p>
+<header class="header">
+    <div class="container nav">
+        <a href="index.html" class="logo">AbijahPainters</a>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active" style="color: var(--accent);">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="tel:0713752200" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.8rem;">Call Now</a>
+    </div>
+</header>
+
+<main class="container" style="padding: 100px 0;">
+    <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start;">
+        
+        <div class="contact-info">
+            <p style="color: var(--accent); text-transform: uppercase; letter-spacing: 3px; font-weight: 700; margin-bottom: 1rem;">Direct Connection</p>
+            <h1 style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; margin-bottom: 2rem;">
+                Start your <br><span class="script">Transformation</span>
+            </h1>
+            <p style="color: var(--text-dim); margin-bottom: 3rem; max-width: 400px;">
+                Ready to upgrade your environment? Fill out the technical inquiry form, or reach out directly via the encrypted channels below.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 30px;">
+                <div class="contact-method" style="background: var(--glass); padding: 20px; border-radius: 16px; border: 1px solid var(--border);">
+                    <small style="color: var(--accent); display: block; margin-bottom: 5px;">PHONE</small>
+                    <a href="tel:0713752200" style="color: white; text-decoration: none; font-size: 1.2rem; font-weight: 700;">0713 752 200</a>
+                </div>
+                <div class="contact-method" style="background: var(--glass); padding: 20px; border-radius: 16px; border: 1px solid var(--border);">
+                    <small style="color: var(--accent); display: block; margin-bottom: 5px;">WHATSAPP</small>
+                    <a href="https://wa.me/254713752200" style="color: white; text-decoration: none; font-size: 1.2rem; font-weight: 700;">Chat with an Expert</a>
+                </div>
             </div>
         </div>
 
-        <form class="contact-form">
-            <div class="input-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="John Doe">
-            </div>
-            <div class="input-group">
-                <label>Project Type</label>
-                <input type="text" placeholder="Interior, Exterior, Commercial...">
-            </div>
-            <div class="input-group">
-                <label>Message</label>
-                <textarea rows="5" placeholder="Tell us about your space..."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
-        </form>
-    </section>
+        <div class="contact-form-wrapper">
+            <form action="#" class="contact-form">
+                <div class="input-group">
+                    <label>Inquiry Identity</label>
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="input-group">
+                    <label>Project Scope</label>
+                    <select style="width: 100%; background: var(--glass); border: 1px solid var(--border); padding: 15px; color: white; border-radius: 12px; outline: none;">
+                        <option style="background: var(--bg);">Interior Residential</option>
+                        <option style="background: var(--bg);">Exterior Residential</option>
+                        <option style="background: var(--bg);">Commercial/Office</option>
+                        <option style="background: var(--bg);">Specialty Finishes</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Location in Kenya</label>
+                    <input type="text" placeholder="e.g. Westlands, Nairobi">
+                </div>
+                <div class="input-group">
+                    <label>Briefing Details</label>
+                    <textarea rows="5" placeholder="Describe the current state and your vision..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 20px; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px;">
+                    Request Precision Quote
+                </button>
+            </form>
+        </div>
+
+    </div>
+</main>
+
+<footer style="padding: 40px 0; text-align: center; border-top: 1px solid var(--border);">
+    <p style="color: var(--text-dim); font-size: 0.8rem;">&copy; 2026 Abijah Painters. Professional Grade Finishes Only.</p>
+</footer>
+
 </body>
 </html>
