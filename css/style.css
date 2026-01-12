@@ -1,52 +1,92 @@
+/* --- THE ABIJAH BRAND SYSTEM --- */
 :root {
-    --bg: #05070a;
-    --card: #0d1117;
-    --accent: #39ff14; 
-    --accent-glow: rgba(57, 255, 20, 0.2);
+    --primary: #4ec028; /* Logo Green */
+    --phone-green: #388E3C; /* Requested Deep Green */
+    --bg-black: #050505;
     --text-main: #ffffff;
-    --text-dim: #8b949e;
-    --glass: rgba(255, 255, 255, 0.03);
-    --border: rgba(255, 255, 255, 0.08);
+    --text-dim: #a1a1a1;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    background-color: var(--bg);
-    color: var(--text-main);
-    font-family: 'Inter', sans-serif;
+body { 
+    background-color: var(--bg-black); 
+    color: var(--text-main); 
+    font-family: 'Inter', sans-serif; 
     line-height: 1.6;
-    background-image: radial-gradient(circle at 50% -20%, #162115 0%, transparent 50%);
-    background-attachment: fixed;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-/* --- NAV --- */
-.header { padding: 1.5rem 0; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
-.nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-family: 'Kaushan Script', cursive; font-size: 1.8rem; color: var(--accent); text-decoration: none; }
-.menu ul { display: flex; list-style: none; gap: 2rem; }
-.menu a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; transition: 0.3s; }
-.menu a:hover, .menu a.active { color: var(--accent); }
+/* --- BRAND TYPOGRAPHY --- */
 
-/* --- BENTO & CARDS --- */
-.bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 250px; gap: 20px; margin: 40px 0; }
-.bento-item { background: var(--card); border: 1px solid var(--border); border-radius: 24px; padding: 40px; position: relative; overflow: hidden; transition: 0.5s; }
-.bento-item:hover { border-color: var(--accent); box-shadow: 0 0 20px var(--accent-glow); transform: translateY(-5px); }
-.large { grid-column: span 2; grid-row: span 2; }
-.wide { grid-column: span 2; }
+/* 1. The Tagline: Green, Italics, Kaushan Font */
+.signature-tagline {
+    font-family: 'Kaushan Script', cursive !important;
+    color: var(--primary) !important;
+    font-style: italic !important;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
 
-/* --- FORMS --- */
-.contact-form { background: var(--card); padding: 40px; border-radius: 24px; border: 1px solid var(--border); }
-.input-group { margin-bottom: 20px; }
-.input-group label { display: block; color: var(--text-dim); font-size: 0.8rem; margin-bottom: 8px; text-transform: uppercase; }
-input, textarea { width: 100%; background: var(--glass); border: 1px solid var(--border); padding: 15px; color: white; border-radius: 12px; outline: none; transition: 0.3s; }
-input:focus, textarea:focus { border-color: var(--accent); background: rgba(57, 255, 20, 0.02); }
+/* 2. The Phone Numbers: Kaushan Font, Deep Green */
+.custom-phone, .action-item.call {
+    font-family: 'Kaushan Script', cursive !important;
+    color: var(--phone-green) !important;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+/* --- NAVIGATION --- */
+.navbar { 
+    height: 80px; 
+    display: flex; 
+    align-items: center; 
+    background: rgba(10,10,10,0.95); 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    border-bottom: 1px solid #1a1a1a;
+}
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Kaushan Script', cursive; font-size: 1.8rem; color: #fff; text-decoration: none; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
+.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+
+/* --- HERO SECTION --- */
+.hero { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    text-align: center; 
+    padding-top: 80px; 
+    position: relative; 
+}
+.hero-glow { 
+    position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); 
+    width: 400px; height: 400px; background: var(--primary); 
+    filter: blur(150px); opacity: 0.15; z-index: -1; 
+}
+.hero-title { font-size: clamp(3rem, 10vw, 5rem); font-weight: 900; line-height: 1.1; margin: 15px 0; }
+.green-glow { color: #fff; text-shadow: 0 0 20px rgba(78, 192, 40, 0.5); }
+.hero-sub { color: var(--text-dim); max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; }
 
 /* --- BUTTONS --- */
-.btn { padding: 12px 30px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; cursor: pointer; border: none; }
-.btn-primary { background: var(--accent); color: #000; }
-.btn-primary:hover { box-shadow: 0 0 20px var(--accent-glow); }
+.btn-main { background: #fff; color: #000; padding: 16px 35px; border-radius: 8px; text-decoration: none; font-weight: 700; display: inline-block; }
+.btn-ghost { border: 1px solid #333; padding: 16px 35px; border-radius: 8px; margin-left: 10px; display: inline-block; }
+.btn-nav { background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 700; }
 
-.script { font-family: 'Kaushan Script', cursive; color: var(--accent); }
+/* --- MOBILE ACTION BAR --- */
+.action-bar { position: fixed; bottom: 0; width: 100%; display: flex; height: 70px; z-index: 2000; }
+.action-item { flex: 1; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 800; }
+.action-item.wa { background: var(--primary); color: #fff; }
+.action-item.call { background: #fff; border-top: 1px solid #ddd; }
+
+@media (max-width: 768px) {
+    .nav-links, .btn-nav { display: none; }
+    .hero-btns { display: flex; flex-direction: column; gap: 10px; }
+    .btn-ghost { margin-left: 0; }
+}
